@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -21,8 +21,25 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Flutter App'),
       ),
-      body: Center(
-        child: Text('Widget Playground!'),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            child: Card(
+              child: Text(
+                "Chart",
+                textAlign: TextAlign.center,
+              ),
+              color: Colors.greenAccent,
+              elevation: 10,
+            ),
+          ),
+          Card(
+            child: Text("Transaction"),
+            color: Colors.pinkAccent,
+            elevation: 10,
+          )
+        ],
       ),
     );
   }
