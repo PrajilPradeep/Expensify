@@ -1,7 +1,9 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 
-import './transaction.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
+import './transaction.dart';
 
 void main() => runApp(MyApp());
 
@@ -83,7 +85,7 @@ class MyHomePage extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             )),
                         Text(
-                          tx.date.toString(),
+                          DateFormat.yMMMd().format(tx.date),
                           style: TextStyle(
                             color: Colors.grey,
                           ),
