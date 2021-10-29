@@ -65,7 +65,7 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ),
                       child: Text(
-                        tx.amount.toString(),
+                        '\u{20B9}${tx.amount}',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.purple,
