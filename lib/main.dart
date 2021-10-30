@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import './widgets/user_transaction.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,6 +41,7 @@ class MyHomePage extends StatelessWidget {
               elevation: 10,
             ),
           ),
+          UserTransactions(),
         ],
       ),
     );
