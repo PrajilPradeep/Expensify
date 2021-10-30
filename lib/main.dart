@@ -39,7 +39,7 @@ class MyHomePage extends StatelessWidget {
         title: Text('Flutter App'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
             width: double.infinity,
@@ -50,6 +50,24 @@ class MyHomePage extends StatelessWidget {
               ),
               color: Colors.greenAccent,
               elevation: 10,
+            ),
+          ),
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                children: [
+                  TextField(decoration: InputDecoration(labelText: "Title")),
+                  TextField(decoration: InputDecoration(labelText: "Amount")),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Add Expense",
+                        style: TextStyle(color: Colors.purple),
+                      )),
+                ],
+              ),
             ),
           ),
           Column(
