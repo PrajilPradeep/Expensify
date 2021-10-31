@@ -25,7 +25,7 @@ class TransactionList extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    '\u{20B9}${transactions[index].amount}',
+                    '\u{20B9}${transactions[index].amount.toStringAsFixed(2)}', //for rounding values to 2 decimal place.
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.purple,
