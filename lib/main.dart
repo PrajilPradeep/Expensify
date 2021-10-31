@@ -16,8 +16,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  // late String titleInput;
-  // late String amountInput;
+  
 
   final titleController = TextEditingController();
   final amountController = TextEditingController();
@@ -28,7 +27,6 @@ class MyHomePage extends StatelessWidget {
         title: Text('Flutter App'),
       ),
       body: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
             width: double.infinity,
