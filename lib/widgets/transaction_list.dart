@@ -20,7 +20,7 @@ class TransactionList extends StatelessWidget {
                   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.purple,
+                      color: Theme.of(context).primaryColor,
                       width: 2,
                     ),
                   ),
@@ -28,7 +28,7 @@ class TransactionList extends StatelessWidget {
                     '\u{20B9}${transactions[index].amount.toStringAsFixed(2)}', //for rounding values to 2 decimal place.
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.purple,
+                      color: Theme.of(context).primaryColor,
                       fontSize: 20,
                     ),
                   ),
