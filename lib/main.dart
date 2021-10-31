@@ -18,6 +18,22 @@ class MyApp extends StatelessWidget {
         primarySwatch:
             Colors.purple, //Generate different shades of the primary color
         accentColor: Colors.tealAccent[400],
+        fontFamily: 'Quicksand',
+        textTheme: ThemeData.light().textTheme.copyWith(
+                subtitle1: TextStyle(
+              fontFamily: 'OpenSans',
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+            )),
+        appBarTheme: AppBarTheme(
+          titleTextStyle: TextStyle(
+            //for title text style
+            fontFamily: 'OpenSans',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }
