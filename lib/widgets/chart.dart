@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
-import '../models/transaction.dart';
 import 'package:intl/intl.dart';
+import '../models/transaction.dart';
+import '../widgets/chart_bar.dart';
 
 class Chart extends StatelessWidget {
   final List<Transaction> recentTransaction;
@@ -21,8 +22,6 @@ class Chart extends StatelessWidget {
         }
       }
 
-      print(DateFormat.E().format(weekDay));
-      print(totalSum);
       return {
         'day': DateFormat.E()
             .format(weekDay)
@@ -32,15 +31,21 @@ class Chart extends StatelessWidget {
     });
   }
 
+  double get totalSpending {
+    return groupedTransactionValue.fold(0.0, (sum, item) {
+      return sum + (item['amount'] as double);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    print(groupedTransactionValue);
     return Card(
       elevation: 6,
       margin: EdgeInsets.all(20),
       child: Row(
         children: groupedTransactionValue.map((data) {
-          return Text('${data['day']}: ${data['amount']}');
+          return ChartBar((data['day'] as String), (data['amount'] as double),
+              totalSpending==0.0?0.0:(data['amount'] as double) / totalSpending);
         }).toList(),
       ),
     );
