@@ -21,11 +21,13 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.tealAccent[400],
         fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
-                subtitle1: TextStyle(
-              fontFamily: 'OpenSans',
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-            )),
+              subtitle1: TextStyle(
+                fontFamily: 'OpenSans',
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+              button: TextStyle(color: Colors.white),
+            ),
         appBarTheme: AppBarTheme(
           titleTextStyle: TextStyle(
             //for title text style
