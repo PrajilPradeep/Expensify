@@ -28,7 +28,7 @@ class Chart extends StatelessWidget {
             .substring(0, 1), //for the First letter of the weekday
         'amount': totalSum
       };
-    });
+    }).reversed.toList();
   }
 
   double get totalSpending {
@@ -43,7 +43,7 @@ class Chart extends StatelessWidget {
       elevation: 6,
       margin: EdgeInsets.all(20),
       child: Padding(
-        padding: EdgeInsets.all(10), 
+        padding: EdgeInsets.all(10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: groupedTransactionValue.map((data) {

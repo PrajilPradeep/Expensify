@@ -14,9 +14,13 @@ class ChartBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
-      FittedBox(
-        //to avoid text wrap and shink the text if out of space.
-        child: Text('\u{20B9}${spendingAmount.toStringAsFixed(0)},'),
+      Container(
+        height:
+            20, //to set consistent height for the bar even when the text resizes
+        child: FittedBox(
+          //to avoid text wrap and shink the text if out of space.
+          child: Text('\u{20B9}${spendingAmount.toStringAsFixed(0)},'),
+        ),
       ),
       SizedBox(height: 4),
       Container(
