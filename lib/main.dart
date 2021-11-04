@@ -50,7 +50,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransactions = [
-    // Transaction(
+    //Transaction(
     //   id: 't1',
     //   title: 'new Watch',
     //   amount: 2000,

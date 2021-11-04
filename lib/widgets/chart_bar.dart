@@ -19,7 +19,7 @@ class ChartBar extends StatelessWidget {
             20, //to set consistent height for the bar even when the text resizes
         child: FittedBox(
           //to avoid text wrap and shink the text if out of space.
-          child: Text('\u{20B9}${spendingAmount.toStringAsFixed(0)},'),
+          child: Text('\u{20B9}${spendingAmount.toStringAsFixed(0)}'),
         ),
       ),
       SizedBox(height: 4),
@@ -35,12 +35,16 @@ class ChartBar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10), //for rounded corners
               ),
             ),
-            FractionallySizedBox(
-              widthFactor: spendingPctOfTotal,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
-                  borderRadius: BorderRadius.circular(10),
+            Align(
+              alignment: Alignment
+                  .bottomCenter, //To align the chart from top to bottom
+              child: FractionallySizedBox(
+                heightFactor: spendingPctOfTotal,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
               ),
             ),
