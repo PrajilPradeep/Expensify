@@ -13,46 +13,59 @@ class ChartBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      Container(
-        height:
-            20, //to set consistent height for the bar even when the text resizes
-        child: FittedBox(
-          //to avoid text wrap and shink the text if out of space.
-          child: Text('\u{20B9}${spendingAmount.toStringAsFixed(0)}'),
-        ),
-      ),
-      SizedBox(height: 4),
-      Container(
-        height: 60,
-        width: 10,
-        child: Stack(
+    return LayoutBuilder(
+      builder: (ctx, constraints) {
+        return Column(
           children: <Widget>[
             Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey, width: 1.0),
-                color: Color.fromRGBO(220, 220, 220, 1),
-                borderRadius: BorderRadius.circular(10), //for rounded corners
+              height: constraints.maxHeight *
+                  0.15, //to set consistent height for the bar even when the text resizes
+              child: FittedBox(
+                //to avoid text wrap and shink the text if out of space.
+                child: Text('\u{20B9}${spendingAmount.toStringAsFixed(0)}'),
               ),
             ),
-            Align(
-              alignment: Alignment
-                  .bottomCenter, //To align the chart from top to bottom
-              child: FractionallySizedBox(
-                heightFactor: spendingPctOfTotal,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
-                    borderRadius: BorderRadius.circular(10),
+            SizedBox(height: constraints.maxHeight * 0.05),
+            Container(
+              height: constraints.maxHeight * 0.6,
+              width: 10,
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey, width: 1.0),
+                      color: Color.fromRGBO(220, 220, 220, 1),
+                      borderRadius:
+                          BorderRadius.circular(10), //for rounded corners
+                    ),
                   ),
-                ),
+                  Align(
+                    alignment: Alignment
+                        .bottomCenter, //To align the chart from top to bottom
+                    child: FractionallySizedBox(
+                      heightFactor: spendingPctOfTotal,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: constraints.maxHeight * 0.05),
+            Container(
+              height: constraints.maxHeight * 0.15,
+              child: FittedBox(
+                // to resize the text in case of small screen size
+                child: Text(label),
               ),
             ),
           ],
-        ),
-      ),
-      SizedBox(height: 4),
-      Text(label),
-    ]);
+        );
+      },
+    );
   }
 }
