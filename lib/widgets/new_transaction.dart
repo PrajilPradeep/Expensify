@@ -72,7 +72,7 @@ class _NewTransactionState extends State<NewTransaction> {
                   .number, //for IOS use TextInputType.numberWithOptions(decimal:true)
               onSubmitted: (_) => _submitData(), //for the validation
             ),
-            Container(
+            SizedBox(
               height: 70.0,
               child: Row(
                 children: <Widget>[

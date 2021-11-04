@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, prefer_const_constructors_in_immutables
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import '../models/transaction.dart';
 
@@ -41,6 +42,7 @@ class TransactionList extends StatelessWidget {
                         child: FittedBox(
                           child: Text(
                             '\u{20B9}${transactions[index].amount}',
+                            style: GoogleFonts.aleo(),
                           ),
                         ),
                         padding: EdgeInsets.all(6),
