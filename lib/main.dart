@@ -1,7 +1,5 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import './widgets/transaction_list.dart';
@@ -64,12 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
     //   id: 't1',
     //   title: 'new Watch',
     //   amount: 2000,
-    //   date: DateTime.now(),
-    // ),
-    // Transaction(
-    //   id: 't2',
-    //   title: 'new Shoe',
-    //   amount: 100,
     //   date: DateTime.now(),
     // ),
   ];
