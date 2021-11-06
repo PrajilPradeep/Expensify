@@ -53,54 +53,61 @@ class _NewTransactionState extends State<NewTransaction> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-      child: Container(
-        padding: EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            TextField(
-              decoration: InputDecoration(labelText: "Title"),
-              controller: _titleController,
-              onSubmitted: (_) => _submitData(), //for the validation
-            ),
-            TextField(
-              decoration: InputDecoration(labelText: "Amount"),
-              controller: _amountController,
-              keyboardType: TextInputType
-                  .number, //for IOS use TextInputType.numberWithOptions(decimal:true)
-              onSubmitted: (_) => _submitData(), //for the validation
-            ),
-            SizedBox(
-              height: 70.0,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Text(
-                      _selectedDate == null
-                          ? 'No Date chosen!'
-                          : 'Picked Date: ${DateFormat.yMd().format(_selectedDate!)}',
-                    ),
-                  ),
-                  TextButton(
+    return SingleChildScrollView(
+      child: Card(
+        elevation: 5,
+        child: Container(
+          padding: EdgeInsets.only(
+            top: 10,
+            left: 10,
+            right: 10,
+            bottom: MediaQuery.of(context).viewInsets.bottom + 10,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              TextField(
+                decoration: InputDecoration(labelText: "Title"),
+                controller: _titleController,
+                onSubmitted: (_) => _submitData(), //for the validation
+              ),
+              TextField(
+                decoration: InputDecoration(labelText: "Amount"),
+                controller: _amountController,
+                keyboardType: TextInputType
+                    .number, //for IOS use TextInputType.numberWithOptions(decimal:true)
+                onSubmitted: (_) => _submitData(), //for the validation
+              ),
+              SizedBox(
+                height: 70.0,
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
                       child: Text(
-                        "Choose Date",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        _selectedDate == null
+                            ? 'No Date chosen!'
+                            : 'Picked Date: ${DateFormat.yMd().format(_selectedDate!)}',
                       ),
-                      onPressed: _datePicker),
-                ],
+                    ),
+                    TextButton(
+                        child: Text(
+                          "Choose Date",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        onPressed: _datePicker),
+                  ],
+                ),
               ),
-            ),
-            ElevatedButton(
-              onPressed: _submitData,
-              child: Text(
-                "Add Expense",
-                style:
-                    TextStyle(color: Theme.of(context).textTheme.button!.color),
+              ElevatedButton(
+                onPressed: _submitData,
+                child: Text(
+                  "Add Expense",
+                  style: TextStyle(
+                      color: Theme.of(context).textTheme.button!.color),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
