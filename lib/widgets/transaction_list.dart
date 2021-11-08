@@ -49,11 +49,11 @@ class TransactionList extends StatelessWidget {
                   ),
                   title: Text(
                     transactions[index].title,
-                    style: Theme.of(context).textTheme.subtitle1,
+                    style: TextStyle(color: Colors.white),
                   ),
                   subtitle: Text(
-                    DateFormat.yMMMd().format(transactions[index].date),
-                  ),
+                      DateFormat.yMMMd().format(transactions[index].date),
+                      style: TextStyle(color: Colors.white)),
                   trailing: IconButton(
                     onPressed: () => deleteTx(transactions[index].id),
                     icon: Icon(Icons.delete),
