@@ -22,7 +22,7 @@ class TransactionList extends StatelessWidget {
               Container(
                 height: 200, //this property will be considered for Boxfit
                 child: Image.asset(
-                  'assets/images/waiting.png',
+                  'assets/images/confused.png',
                   fit: BoxFit.cover, //for setting the image boundaries
                 ),
               ),
@@ -31,6 +31,7 @@ class TransactionList extends StatelessWidget {
         : ListView.builder(
             itemBuilder: (ctx, index) {
               return Card(
+                color: Color(0xFF9162e4),
                 elevation: 5,
                 margin: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
                 child: ListTile(

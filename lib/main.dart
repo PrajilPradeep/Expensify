@@ -25,9 +25,9 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
       theme: ThemeData(
         primarySwatch:
-            Colors.purple, //Generate different shades of the primary color
+            Colors.deepPurple, //Generate different shades of the primary color
         // errorColor: Colors.red, //default is red
-        accentColor: Colors.tealAccent[400],
+        accentColor: Colors.deepPurple,
         fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
               subtitle1: TextStyle(
@@ -58,12 +58,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransactions = [
-    // Transaction(
-    //   id: 't1',
-    //   title: 'new Watch',
-    //   amount: 2000,
-    //   date: DateTime.now(),
-    // ),
+    Transaction(
+      id: 't1',
+      title: 'new Watch',
+      amount: 2000,
+      date: DateTime.now(),
+    ),
   ];
 
   List<Transaction> get _recentTransactions {

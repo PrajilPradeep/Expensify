@@ -22,7 +22,10 @@ class ChartBar extends StatelessWidget {
                   0.15, //to set consistent height for the bar even when the text resizes
               child: FittedBox(
                 //to avoid text wrap and shink the text if out of space.
-                child: Text('\u{20B9}${spendingAmount.toStringAsFixed(0)}'),
+                child: Text(
+                  '\u{20B9}${spendingAmount.toStringAsFixed(0)}',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
             SizedBox(height: constraints.maxHeight * 0.05),
@@ -46,7 +49,7 @@ class ChartBar extends StatelessWidget {
                       heightFactor: spendingPctOfTotal,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColor,
+                          color: Colors.pinkAccent,
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
@@ -60,7 +63,10 @@ class ChartBar extends StatelessWidget {
               height: constraints.maxHeight * 0.15,
               child: FittedBox(
                 // to resize the text in case of small screen size
-                child: Text(label),
+                child: Text(
+                  label,
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
           ],
